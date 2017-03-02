@@ -17,7 +17,7 @@ public class Portal extends GameObject{
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
-		
+		g.drawOval((int)getX(), (int)getY(), (int)getSize(), (int)getSize()*3);
 	}
 
 }
