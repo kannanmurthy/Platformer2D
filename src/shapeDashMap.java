@@ -12,7 +12,8 @@ import javax.imageio.ImageIO;
 
 public class shapeDashMap extends GameMap {
 	Dimension a = Toolkit.getDefaultToolkit().getScreenSize();
-//	Tank t = new Tank(Color.BLACK, a.width/2 , a.height/2, 200);
+	Barrier b = new Barrier(Color.BLACK, 100 , 558, 100);
+	
 	Image background;
 	//Rectangle rect = new Rectangle((int)t.getX()+130, (int)t.getY()-33, 100, 65);
 	int shouldShoot = 0;
@@ -132,7 +133,7 @@ public class shapeDashMap extends GameMap {
 		//		Tank t = new Tank(Color.BLACK, 1 , 1);
 
 		g.drawImage(background, 0, 0, a.width, a.height, null);
-		
+		b.draw(g);		
 		//		t.draw(g);
 		//		TankBot.draw(g);
 //		for (int i =0; i<movers.size(); i++){

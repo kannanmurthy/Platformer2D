@@ -11,7 +11,8 @@ public class Barrier extends GameObject{
 	
 	@Override
 	public void draw(Graphics g){
-		
+		g.fillRect((int)getX(), (int)getY(), (int)getSize(), (int)getSize());
+
 	}
 
 	@Override

@@ -142,11 +142,11 @@ public class MovingObjectsPanel extends JPanel {
 //		return  angle;
 //	}
 //
-//
-//	@Override
-//	public void paintComponent(Graphics g) {
-//		super.paintComponent(g);
-//		gm.draw(g);
-//	}
+
+	@Override
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		gm.draw(g);
+	}
 
 }
