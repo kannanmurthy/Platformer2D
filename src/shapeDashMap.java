@@ -103,8 +103,8 @@ public class shapeDashMap extends GameMap {
 
 	public void moveUp(){
 		//t.setY((int)(t.getY()+10));
-		s.setMovingDirection((3*Math.PI/2));
-		s.setSpeed(15);
+		s.setX((int)s.getY()+200);
+		s.setSpeed(1);
 	}
 
 	public void moveRight(){
