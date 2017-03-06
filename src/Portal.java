@@ -18,7 +18,7 @@ public class Portal extends GameObject{
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
 		g.setColor(color);
-		g.drawOval((int)getX(), (int)getY(), (int)getSize(), (int)getSize()*3);
+		g.fillOval((int)getX(), (int)getY(), (int)getSize(), (int)getSize()*3);
 	}
 
 }

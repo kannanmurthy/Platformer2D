@@ -31,7 +31,7 @@ public class MovingObjectsPanel extends JPanel {
 	private void makeGameMap() {
 		gm = new shapeDashMap(this.defaultDim);// let the map know what dim is
 
-//		setUpKeyMappings();
+		setUpKeyMappings();
 
 		t = new Timer(100, new ActionListener() {// fires off every 10 ms
 			@Override
@@ -41,10 +41,6 @@ public class MovingObjectsPanel extends JPanel {
 					// you do every time the clock goes off.
 					//animation 
 					repaint();// naturally, we want to see the new view
-//				if ((gm.TankBot.getHealth() <=0 && gm.TankBot2.getHealth()<=0) || gm.gameOver){
-//					gm.tick();
-//					t.stop();
-//				}
 			}
 		}
 
