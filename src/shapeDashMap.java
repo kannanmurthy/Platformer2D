@@ -15,7 +15,8 @@ public class shapeDashMap extends GameMap {
 	Barrier b1 = new Barrier(Color.BLACK, 200 , 558, 100);
 	Barrier b2 = new Barrier(Color.BLACK, 600, 558, 100);
 	Barrier b3 = new Barrier(Color.BLACK, 1000, 558, 100);
-	Portal p = new Portal(Color.cyan, 1300, 358, 100);
+	Portal p = new Portal(Color.BLACK, 1300, 358, 100);
+	Shape s = new Shape(Color.cyan, 10, 628, 30);
 	Image background;
 	//Rectangle rect = new Rectangle((int)t.getX()+130, (int)t.getY()-33, 100, 65);
 	int shouldShoot = 0;
@@ -24,111 +25,33 @@ public class shapeDashMap extends GameMap {
 	public shapeDashMap(Dimension d) {
 
 
-
 	}
 
-//	public void tick(){
-//		//system.out.println("BOT 1 health = " + TankBot.getHealth());
-//		//System.out.println("BOT 2 health = " + TankBot2.getHealth());
-//		super.tick();
-//		double angle = calculateAngle();
-//
-//		shouldShoot++;
-//
-//		for (int i =0; i<movers.size(); i++){
-//
-//			((GameObject)movers.get(i)).setBoundingRect((int)((GameObject)movers.get(i)).getX(), (int)((GameObject)movers.get(i)).getY(), 20, 20);
-//			if (movers.get(i) instanceof Tank){
-//				t.setDir(angle);
-//				t.setBoundingRect((int)t.getX()+130, (int)t.getY()-33, 100, 65);
-//				if (t.getHealth() ==0 ){
-//					gameOver = true;
-//					//JOptionPane.showMessageDialog(null, "Game Over");
-//				}
-//			}
-//
-//
-//
-//
-//			if (movers.get(i).equals(TankBot)){
-//				System.out.println("tank bot");
-//				TankBot.setSpeed(3);
-//				TankBot.setMovingDirection(botAngle());
-//				TankBot.setDirection(botAngle());
-//				TankBot.move();
-//				TankBot.setBoundingRect((int)TankBot.getX()+130, (int)TankBot.getY()-33, 100, 65);
-//				if (TankBot.getHealth() <=0){
-//					movers.remove(i);
-//					isBotDead = true;
-//
-//				}
-//			}
-//			if (movers.get(i).equals(TankBot2)){
-//				System.out.println("tankbot2");
-//				TankBot2.setSpeed(3);
-//				TankBot2.setMovingDirection(botAngle2());
-//				TankBot2.setDirection(botAngle2());
-//				TankBot2.move();
-//				TankBot2.setBoundingRect((int)TankBot2.getX()+130, (int)TankBot2.getY()-33, 100, 65);
-//				if (TankBot2.getHealth() <=0){
-//					movers.remove(i);
-//					isBotDead2 = true;
-//				}
-//			}
-//
-//			if (TankBot.getHealth() <=0 && TankBot2.getHealth() <= 0){
-//				//JOptionPane.showMessageDialog(null, "You Win");
-//			}
-//
-//		}
-//
-//
-//
-//		//		System.out.println("bot angle= " + Math.toDegrees(botAngle()));
-//
-//
-//		//		for (int i =0; i<movers.size(); i++){
-//		//			System.out.println("index = " + i + "  " + ((GameObject) movers.get(i)).getBoundingRect());
-//		//			
-//		//		}
-//
-//
-//
-//		for (int i = 0; i < movers.size(); i++) {
-//			for (int j = i+1; j < movers.size(); j++) {
-//				// compare list.get(i) and list.get(j)
-//				//System.out.println("inner loop");
-//
-//
-//				if (movers.get(i).getBoundingRect().intersects(movers.get(j).getBoundingRect()) && 
-//						!((GameObject) movers.get(i)).getName().equals(((GameObject)movers.get(j)).getName())){
-//					System.out.println("collision between " + movers.get(i) + "and " + movers.get(j));
-//
-//					((GameObject) movers.get(i)).takeDamage((GameObject) movers.get(j));
-//					((GameObject) movers.get(j)).takeDamage((GameObject) movers.get(i));
-//					try {
-//						if (movers.get(i) instanceof Bullet){
-//							movers.remove(i);
-//						}
-//					}
-//					catch (Exception e){
-//						System.out.println("error removing bullet");
-//					}
-//					try {
-//						if (movers.get(j) instanceof Bullet){
-//							movers.remove(j);
-//						}
-//					}
-//					catch (Exception e){
-//						System.out.println("error removing bullet");
-//					}
-//				}
-//			}
-//		}
-//
-//
-//
-//	}
+	public void tick(){
+		//system.out.println("BOT 1 health = " + TankBot.getHealth());
+		//System.out.println("BOT 2 health = " + TankBot2.getHealth());
+		super.tick();
+
+		shouldShoot++;
+
+		for (int i =0; i<movers.size(); i++){
+
+			((GameObject)movers.get(i)).setBoundingRect((int)((GameObject)movers.get(i)).getX(), (int)((GameObject)movers.get(i)).getY(), 20, 20);
+			if (movers.get(i) instanceof Tank){
+				s.setDir(angle);
+				t.setBoundingRect((int)t.getX()+130, (int)t.getY()-33, 100, 65);
+			}
+		}
+
+		//		System.out.println("bot angle= " + Math.toDegrees(botAngle()));
+
+		//		for (int i =0; i<movers.size(); i++){
+		//			System.out.println("index = " + i + "  " + ((GameObject) movers.get(i)).getBoundingRect());
+		//			
+		//		}
+
+
+	}
 
 
 	public void draw(Graphics g){
@@ -139,6 +62,8 @@ public class shapeDashMap extends GameMap {
 		b2.draw(g);
 		b3.draw(g);
 		p.draw(g);
+		s.draw(g);
+		
 		//		t.draw(g);
 		//		TankBot.draw(g);
 //		for (int i =0; i<movers.size(); i++){
@@ -190,29 +115,29 @@ public class shapeDashMap extends GameMap {
 //		this.addGameObject(TankBot2.shoot(botAngle2()));
 //	}
 //
-//	public void moveDown(){
-//		//t.setY((int)(t.getY()-10));
-//		t.setMovingDirection((Math.PI/2));
-//		t.setSpeed(15);
-//	}
-//
-//	public void moveUp(){
-//		//t.setY((int)(t.getY()+10));
-//		t.setMovingDirection((3*Math.PI/2));
-//		t.setSpeed(15);
-//	}
-//
-//	public void moveRight(){
-//		//t.setX((int)(t.getX()+10));
-//		t.setMovingDirection(0);
-//		t.setSpeed(15);
-//	}
-//
-//	public void moveLeft(){
-//		//t.setX((int)(t.getX()-10));
-//		t.setMovingDirection(Math.PI);
-//		t.setSpeed(15);
-//	}
+	public void moveDown(){
+		//t.setY((int)(t.getY()-10));
+		s.setMovingDirection((Math.PI/2));
+		s.setSpeed(15);
+	}
+
+	public void moveUp(){
+		//t.setY((int)(t.getY()+10));
+		s.setMovingDirection((3*Math.PI/2));
+		s.setSpeed(15);
+	}
+
+	public void moveRight(){
+		//t.setX((int)(t.getX()+10));
+		s.setMovingDirection(0);
+		s.setSpeed(15);
+	}
+
+	public void moveLeft(){
+		//t.setX((int)(t.getX()-10));
+		s.setMovingDirection(0);
+		s.setSpeed(15);
+	}
 
 	@Override
 	public void openBackgroundImage() {

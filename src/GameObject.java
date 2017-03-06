@@ -16,8 +16,9 @@ public abstract class GameObject implements MovingObject {
 
 			size = 10; // 10 might be a good size  
 	private int level = 1;//
-	private Color color;
+	protected Color color;
 	private Rectangle rect;
+	private double movingDirection;
 
 	public GameObject(Color color, double x, double y, double size) {
 		this.color = color;
@@ -26,6 +27,9 @@ public abstract class GameObject implements MovingObject {
 		this.size = size;
 		rect = new Rectangle();
 		// assign damage
+	}
+	public double getMovingDirection(){
+		return this.movingDirection;
 	}
 
 
@@ -72,6 +76,10 @@ public abstract class GameObject implements MovingObject {
 
 	public void setBoundingRect(int x, int y, int width, int height){
 		rect.setBounds(x, y, width, height);
+	}
+	
+	public void setMovingDirection(double movingDirection){
+		this.movingDirection = movingDirection;
 	}
 
 
