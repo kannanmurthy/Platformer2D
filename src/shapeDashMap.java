@@ -18,8 +18,10 @@ public class shapeDashMap extends GameMap {
 	Portal p = new Portal(Color.MAGENTA, 1300, 358, 100);
 	Shape s = new Shape(Color.DARK_GRAY, 10, 628, 30);
 	Image background;
+	public static double seconds = .01;
 	//Rectangle rect = new Rectangle((int)t.getX()+130, (int)t.getY()-33, 100, 65);
 	boolean gameOver;
+
 
 	public shapeDashMap(Dimension d) {
 		addShape();
@@ -106,6 +108,7 @@ public class shapeDashMap extends GameMap {
 		//t.setY((int)(t.getY()+10));
 		s.setMovingDirection(0);
 		s.setY((int)s.getY()-135);
+		int temp = (int)s.getY()-135;
 		s.setSpeed(8);
 	}
 
@@ -132,6 +135,9 @@ public class shapeDashMap extends GameMap {
 			e.printStackTrace();
 		}
 
+	}
+	private void secondCounter() {
+		seconds += .1;
 	}
 
 	private int mouseX(){

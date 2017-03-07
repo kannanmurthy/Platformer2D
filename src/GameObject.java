@@ -19,6 +19,7 @@ public abstract class GameObject implements MovingObject {
 	protected Color color;
 	private Rectangle rect;
 	private double movingDirection;
+	private boolean inAir = false;
 
 	public GameObject(Color color, double x, double y, double size) {
 		this.color = color;
@@ -59,6 +60,7 @@ public abstract class GameObject implements MovingObject {
 		x+= getSpeed();
 //		y+= getSpeed();
 		checkOffScreen();
+
 		// maybe "push" back onto the screen change direction if
 		// this object goes off the screen
 	}
@@ -66,6 +68,9 @@ public abstract class GameObject implements MovingObject {
 	public abstract void checkOffScreen();
 
 	public abstract void draw(Graphics g);
+
+
+
 
 
 	@Override
