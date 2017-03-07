@@ -97,26 +97,28 @@ public class shapeDashMap extends GameMap {
 
 	public void moveDown(){
 		//t.setY((int)(t.getY()-10));
-		s.setMovingDirection((Math.PI/2));
+		s.setY((int)s.getY()+135);
+		s.setMovingDirection(0);
 		s.setSpeed(15);
 	}
 
 	public void moveUp(){
 		//t.setY((int)(t.getY()+10));
-		s.setX((int)s.getY()+200);
-		s.setSpeed(1);
+		s.setMovingDirection(0);
+		s.setY((int)s.getY()-135);
+		s.setSpeed(8);
 	}
 
 	public void moveRight(){
 		//t.setX((int)(t.getX()+10));
 		s.setMovingDirection(0);
-		s.setSpeed(15);
+		s.setSpeed(8);
 	}
 
 	public void moveLeft(){
 		//t.setX((int)(t.getX()-10));
 		s.setMovingDirection(0);
-		s.setSpeed(15);
+		s.setSpeed(8);
 	}
 
 	@Override

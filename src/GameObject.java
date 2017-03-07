@@ -57,7 +57,7 @@ public abstract class GameObject implements MovingObject {
 	@Override
 	public void move() {
 		x+= getSpeed();
-		y+= getSpeed();
+//		y+= getSpeed();
 		checkOffScreen();
 		// maybe "push" back onto the screen change direction if
 		// this object goes off the screen

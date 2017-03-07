@@ -9,6 +9,7 @@ public class shapeDashLauncher {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		JFrame gameFrame = new JFrame();
+		System.setProperty("sun.java2d.opengl", "true");
 		Map<String,String> environMap= System.getenv();
 		System.out.println(environMap.keySet());
 		
