@@ -21,6 +21,7 @@ public abstract class GameObject implements MovingObject {
 	private double movingDirection;
 	private boolean inAir = false;
 
+
 	public GameObject(Color color, double x, double y, double size) {
 		this.color = color;
 		this.x = x;
@@ -57,9 +58,12 @@ public abstract class GameObject implements MovingObject {
 
 	@Override
 	public void move() {
-		x += getSpeed();
+		if(shapeDashMap.ifCollide() == false) {
+
+			x += getSpeed();
 //		y+= getSpeed();
-		checkOffScreen();
+			checkOffScreen();
+		}
 
 		// maybe "push" back onto the screen change direction if
 		// this object goes off the screen

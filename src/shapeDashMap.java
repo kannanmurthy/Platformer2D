@@ -12,15 +12,16 @@ import javax.imageio.ImageIO;
 
 public class shapeDashMap extends GameMap {
 	Dimension a = Toolkit.getDefaultToolkit().getScreenSize();
-	Barrier b1 = new Barrier(Color.DARK_GRAY, 200 , 558, 100);
-	Barrier b2 = new Barrier(Color.DARK_GRAY, 600, 558, 100);
-	Barrier b3 = new Barrier(Color.DARK_GRAY, 1000, 558, 100);
+	static Barrier b1 = new Barrier(Color.DARK_GRAY, 200 , 558, 100);
+	static Barrier b2 = new Barrier(Color.DARK_GRAY, 600, 558, 100);
+	static Barrier b3 = new Barrier(Color.DARK_GRAY, 1000, 558, 100);
 	Portal p = new Portal(Color.MAGENTA, 1300, 358, 100);
-	Shape s = new Shape(Color.DARK_GRAY, 10, 628, 30);
+	static Shape s = new Shape(Color.DARK_GRAY, 10, 628, 30);
 	Image background;
 	public static double seconds = .01;
 	//Rectangle rect = new Rectangle((int)t.getX()+130, (int)t.getY()-33, 100, 65);
 	boolean gameOver;
+	static boolean collision = false;
 
 
 	public shapeDashMap(Dimension d) {
@@ -138,6 +139,12 @@ public class shapeDashMap extends GameMap {
 			e.printStackTrace();
 		}
 
+	}
+	public static boolean ifCollide() {
+		if(s.getBounds().intersects(b1.getBounds()) || s.getBounds().intersects(b2.getBounds()) || s.getBounds().intersects(b3.getBounds())) {
+			collision = true;
+		} else collision = false;
+		return collision;
 	}
 	private void secondCounter() {
 		seconds += .1;

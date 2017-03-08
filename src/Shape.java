@@ -1,11 +1,15 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public class Shape extends GameObject{
 
 	public Shape(Color color, double x, double y, double size) {
 		super(color, x, y, size);
 		
+	}
+	public Rectangle getBounds() {
+		return new Rectangle((int)getX(),(int)getY(),(int)this.getSize(),(int)this.getSize());
 	}
 
 
