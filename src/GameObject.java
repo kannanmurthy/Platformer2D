@@ -14,7 +14,7 @@ public abstract class GameObject implements MovingObject {
 	private double  // degrees or radians
 			x= 0, y= 0, // >= 0
 
-			size = 10; // 10 might be a good size  
+	size = 10; // 10 might be a good size
 	private int level = 1;//
 	protected Color color;
 	private Rectangle rect;
@@ -44,7 +44,7 @@ public abstract class GameObject implements MovingObject {
 
 	public double getY(){
 		return y;
-	} 
+	}
 
 	public void setY(int i){
 		y = i;
@@ -57,7 +57,7 @@ public abstract class GameObject implements MovingObject {
 
 	@Override
 	public void move() {
-		x+= getSpeed();
+		x += getSpeed();
 //		y+= getSpeed();
 		checkOffScreen();
 
@@ -82,7 +82,7 @@ public abstract class GameObject implements MovingObject {
 	public void setBoundingRect(int x, int y, int width, int height){
 		rect.setBounds(x, y, width, height);
 	}
-	
+
 	public void setMovingDirection(double movingDirection){
 		this.movingDirection = movingDirection;
 	}

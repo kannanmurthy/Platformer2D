@@ -59,7 +59,8 @@ public class shapeDashMap extends GameMap {
 		b3.draw(g);
 		p.draw(g);
 		s.draw(g);
-		
+
+
 		//		t.draw(g);
 		//		TankBot.draw(g);
 //		for (int i =0; i<movers.size(); i++){
@@ -89,7 +90,7 @@ public class shapeDashMap extends GameMap {
 
 	}
 
-//	public double getBotAngle(){
+	//	public double getBotAngle(){
 //		return this.botAngle();
 //	}
 //
@@ -99,9 +100,11 @@ public class shapeDashMap extends GameMap {
 
 	public void moveDown(){
 		//t.setY((int)(t.getY()-10));
-		s.setY((int)s.getY()+135);
+		if(s.getY()<628)
+		s.setY((int) s.getY() + 135);
 		s.setMovingDirection(0);
 		s.setSpeed(15);
+
 	}
 
 	public void moveUp(){
@@ -109,7 +112,7 @@ public class shapeDashMap extends GameMap {
 		s.setMovingDirection(0);
 		s.setY((int)s.getY()-135);
 		int temp = (int)s.getY()-135;
-		s.setSpeed(8);
+		s.setSpeed(10);
 	}
 
 	public void moveRight(){
@@ -153,7 +156,7 @@ public class shapeDashMap extends GameMap {
 		int y = (int) b.getY();
 		return y;
 	}
-	
+
 //	private double botAngle2(){
 //		double adjacentSide = t.getX() - TankBot2.getX();
 //		double oppositeSide = t.getY() - TankBot2.getY();
