@@ -16,7 +16,7 @@ public class shapeDashMap extends GameMap {
 	static Barrier b2 = new Barrier(Color.DARK_GRAY, 600, 558, 100);
 	static Barrier b3 = new Barrier(Color.DARK_GRAY, 1000, 558, 100);
 	Portal p = new Portal(Color.MAGENTA, 1300, 358, 100);
-	static Shape s = new Shape(Color.DARK_GRAY, 10, 628, 30);
+	static Shape s = new Shape(Color.GREEN, 10, 628, 30);
 	Image background;
 	public static double seconds = .01;
 	//Rectangle rect = new Rectangle((int)t.getX()+130, (int)t.getY()-33, 100, 65);
@@ -101,17 +101,22 @@ public class shapeDashMap extends GameMap {
 
 	public void moveDown(){
 		//t.setY((int)(t.getY()-10));
-		if(s.getY()<628)
-		s.setY((int) s.getY() + 135);
+		if(s.getY()<628) {
+			while (s.getY() <= 628) {
+				s.setY((int) s.getY() + 1);
+			}
+		}
 		s.setMovingDirection(0);
-		s.setSpeed(15);
+		s.setSpeed(10);
 
 	}
 
 	public void moveUp(){
 		//t.setY((int)(t.getY()+10));
 		s.setMovingDirection(0);
-		s.setY((int)s.getY()-135);
+		while(s.getY() >= 493) {
+			s.setY((int)s.getY()-1);
+		}
 		int temp = (int)s.getY()-135;
 		s.setSpeed(10);
 	}

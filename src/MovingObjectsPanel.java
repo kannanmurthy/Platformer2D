@@ -17,7 +17,9 @@ public class MovingObjectsPanel extends JPanel {
 
 	final Dimension defaultDim;// = new Dimension(800,600);
 	shapeDashMap gm;
+	shapeDashMap lvl2;
 	private Timer t;
+	private boolean reachedPortal = false;
 
 	public MovingObjectsPanel() {
 		this( new Dimension(800,600));
@@ -30,6 +32,7 @@ public class MovingObjectsPanel extends JPanel {
 	}
 	private void makeGameMap() {
 		gm = new shapeDashMap(this.defaultDim);// let the map know what dim is
+		lvl2 = new shapeDashMap(this.defaultDim);
 
 		setUpKeyMappings();
 
