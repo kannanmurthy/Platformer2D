@@ -12,9 +12,9 @@ import javax.imageio.ImageIO;
 
 public class shapeDashMap extends GameMap {
 	Dimension a = Toolkit.getDefaultToolkit().getScreenSize();
-	static Barrier b1 = new Barrier(Color.DARK_GRAY, 200 , 578, 80);
-	static Barrier b2 = new Barrier(Color.DARK_GRAY, 600, 578, 80);
-	static Barrier b3 = new Barrier(Color.DARK_GRAY, 1000, 578, 80);
+	static Barrier b1 = new Barrier(Color.DARK_GRAY, 400 , 598, 60);
+	static Barrier b2 = new Barrier(Color.DARK_GRAY, 650, 598, 60);
+	static Barrier b3 = new Barrier(Color.DARK_GRAY, 1000, 598, 60);
 	Portal p = new Portal(Color.MAGENTA, 1300, 358, 100);
 	static Shape s = new Shape(Color.GREEN, 10, 628, 30);
 	Image background;
