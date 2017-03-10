@@ -17,9 +17,7 @@ public class MovingObjectsPanel extends JPanel {
 
 	final Dimension defaultDim;// = new Dimension(800,600);
 	shapeDashMap gm;
-	shapeDashMap lvl2;
 	private Timer t;
-	private boolean reachedPortal = false;
 
 	public MovingObjectsPanel() {
 		this( new Dimension(800,600));
@@ -32,7 +30,6 @@ public class MovingObjectsPanel extends JPanel {
 	}
 	private void makeGameMap() {
 		gm = new shapeDashMap(this.defaultDim);// let the map know what dim is
-		lvl2 = new shapeDashMap(this.defaultDim);
 
 		setUpKeyMappings();
 
@@ -56,7 +53,7 @@ public class MovingObjectsPanel extends JPanel {
 		// In this case I mapped the space bar key to the action named "shoot"
 		// Whenever someone hits the Space Bar the action shoot is sent out
 
-		this.getInputMap().put(KeyStroke.getKeyStroke("SPACE"),"shoot");
+		this.getInputMap().put(KeyStroke.getKeyStroke("SPACE"),"jump");
 		this.getInputMap().put(KeyStroke.getKeyStroke("W"), "moveUp");
 		this.getInputMap().put(KeyStroke.getKeyStroke("S"), "moveDown");
 		this.getInputMap().put(KeyStroke.getKeyStroke("D"), "moveRight");
@@ -71,11 +68,11 @@ public class MovingObjectsPanel extends JPanel {
 		// goes in the actionPerformed method will be executed when a shoot command
 		// is sent...
 
-		this.getActionMap().put("shoot",new AbstractAction(){
+		this.getActionMap().put("jump",new AbstractAction(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				gm.shoot();
+				gm.jump();
 			}
 		});
 //		this.getActionMap().put("stop",new AbstractAction(){
